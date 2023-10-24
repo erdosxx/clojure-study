@@ -1,6 +1,6 @@
 (ns clojure-study.core-spec
   (:require
-    [clojure-study.core :refer :all]
+    [clojure-study.clojure-for-the-brave-and-true.chapter-6.functions :refer :all]
     [speclj.core :refer :all]))
 
 

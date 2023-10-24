@@ -1,3 +1,4 @@
+
 (+ 1 2)
 
 (odd? 2)
@@ -45,6 +46,8 @@
 
 (def second (fn [list] (nth list 1)))
 (second '(1 2 3 4))
+
+(nth '() 1)
 
 (def third (fn [list] (nth list 2)))
 (third '(1 2 3 4))
@@ -99,13 +102,6 @@
 (+ 1 4 9 16)
 (apply + [1 4 9 16])
 (apply + '(1 4 9 16))
-
-
-(def my-apply
-  (fn [function sequence]
-    (eval
-      (cons function sequence))))
-
 
 (cons "the first element" [1 2 3])
 (my-apply + [1 2 3])
