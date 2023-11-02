@@ -48,6 +48,10 @@
 (second '(1 2 3 4))
 
 (nth '() 1)
+(if (nil? 1) (prn "nil") (prn "not nil"))
+(count '(1 2 3))
+(== 1 1)
+(nth '(1 2) 1)
 
 (def third (fn [list] (nth list 2)))
 (third '(1 2 3 4))
