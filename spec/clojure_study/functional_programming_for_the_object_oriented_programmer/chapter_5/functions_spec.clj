@@ -1,7 +1,7 @@
-(ns clojure-study.core-spec
+(ns clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-5.functions-spec
   (:require
-    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-5.functions :refer :all]
-    [speclj.core :refer :all]))
+    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-5.functions :refer [make Point apply-message-to send-to Holder]]
+    [speclj.core :refer [describe it should= run-specs]]))
 
 
 (def a-point (make Point 1 2))

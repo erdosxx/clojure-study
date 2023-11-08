@@ -9,12 +9,6 @@
           (apply method instance args)))))
 
 
-(def send-to
-  (fn [instance message & args]
-    (let [class (eval (:__class_symbol__ instance))]
-      (apply-message-to class instance message args))))
-
-
 (def make
   (fn [class & args]
     (let [seeded {:__class_symbol__ (:__own_symbol__ class)}]
@@ -25,7 +19,7 @@
   {:__own_symbol__ 'Point
    :__instance_methods__ {:class
                           (fn [this]
-                            (eval (:__class_symbol__ this)))
+                            (binding [*ns* (find-ns 'clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-5.functions)] (eval (:__class_symbol__ this))))
 
                           :class-name
                           (fn [this]
@@ -39,6 +33,17 @@
                           (fn [this xinc yinc]
                             (make Point (+ (:x this) xinc)
                                   (+ (:y this) yinc)))}})
+
+
+(def send-to
+  (fn [instance message & args]
+    (let [class (binding [*ns* (find-ns 'clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-5.functions)] (eval (:__class_symbol__ instance)))]
+      (apply-message-to class instance message args))))
+
+
+(def send-to-Point
+  (fn [instance message & args]
+    (apply-message-to Point instance message args)))
 
 
 (def Holder

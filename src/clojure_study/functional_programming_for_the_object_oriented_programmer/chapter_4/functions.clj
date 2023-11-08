@@ -1,13 +1,14 @@
 (ns clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-4.functions
   (:require
-    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions :refer [make]]))
+    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions :as ch3]))
 
 
 (def send-to
   (fn [instance message & args]
-    (let [class (eval (:__class_symbol__  instance))
-          method (message (:__instance_methods__ class))]
-      (apply method instance args))))
+    (let [method (message (:__methods__ instance))]
+      (if (nil? args)
+        (apply method instance [])
+        (apply method instance args)))))
 
 
 (def Point
@@ -20,12 +21,16 @@
      :__class_symbol__ 'Point
      :__methods__ {:class :__class_symbol__
 
-                   :x :x
-                   :y :y
+                   :x
+                   (fn [this]
+                     (:x this))
+                   :y
+                   (fn [this]
+                     (:y this))
                    :shift
                    (fn [this xinc yinc]
-                     (make Point (+ (send-to this :x) xinc)
-                           (+ (send-to this :y) yinc)))
+                     (ch3/make Point (+ (send-to this :x) xinc)
+                               (+ (send-to this :y) yinc)))
                    :get
                    (fn [this attr]
                      (attr this))

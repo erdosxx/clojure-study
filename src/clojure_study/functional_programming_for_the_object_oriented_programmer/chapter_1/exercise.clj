@@ -15,13 +15,13 @@
 
 (+ 1 (- 4 2))
 
-
 (fn [n] (+ n n))
 
 ((fn [n] (+ n n)) 2)
 (+ 1 2)
 
-(fn [n] (assign n (+ 1 n)) (+ n n))
+
+;; (fn [n] (assign n (+ 1 n)) (+ n n))
 
 (def twice (fn [n] (+ n n)))
 (twice 2)
@@ -108,11 +108,12 @@
 (apply + '(1 4 9 16))
 
 (cons "the first element" [1 2 3])
-(my-apply + [1 2 3])
+
+
+;; (my-apply + [1 2 3])
 
 (filter odd? [1 2 3 4])
 (first (filter odd? [1 2 3 4]))
-
 
 (map inc [0 1 2 3])
 (map * [0 1 2 3] [100 200 300 400])
@@ -123,11 +124,17 @@
 (def make-list (fn [& args] args))
 (make-list 1 2 3 4)
 (def squares (fn [lst] (map * lst lst)))
-(def addsquares-list (fn [lst] (my-apply + (squares lst))))
-(def addsquares (fn [& args] (my-apply + (addsquares-list (make-list args)))))
-(my-apply + (vector (1 2 3 4)))
+
+
+;; (def addsquares-list (fn [lst] (my-apply + (squares lst))))
+;; (def addsquares (fn [& args] (my-apply + (addsquares-list (make-list args)))))
+;; (my-apply + (vector (1 2 3 4)))
 (squares [1 2 3 4])
-(my-apply + (squares [1 2 3 4]))
-(addsqures-list [1 2 3 4])
+
+
+;; (my-apply + (squares [1 2 3 4]))
+;; (addsqures-list [1 2 3 4])
 (vector (make-list 1 2 3 4))
-(addsqures 1 2 3 4)
+
+
+;; (addsqures 1 2 3 4)

@@ -1,8 +1,8 @@
-(ns clojure-study.core-spec
+(ns clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-4.functions-spec
   (:require
     [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions :refer [make]]
-    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-4.functions :refer :all]
-    [speclj.core :refer :all]))
+    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-4.functions :refer [Point send-to]]
+    [speclj.core :refer [describe should= it run-specs]]))
 
 
 (def point (make Point 1 2))

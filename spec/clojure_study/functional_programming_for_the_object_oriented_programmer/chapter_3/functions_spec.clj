@@ -1,7 +1,7 @@
-(ns clojure-study.core-spec
+(ns clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions-spec
   (:require
-    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions :refer :all]
-    [speclj.core :refer :all]))
+    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-3.functions :refer [Point add add-2 make Triangle equal-triangle? valid-triangle? right-triangle different-triangle equal-right-triangle]]
+    [speclj.core :refer [describe should= it run-specs]]))
 
 
 (describe "Add two Points"

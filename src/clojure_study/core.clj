@@ -2,5 +2,5 @@
 
 
 (defn -main
-  [& args]
+  [& _]
   (println "Hello World"))

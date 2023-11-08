@@ -18,7 +18,9 @@ great-books
 (in-ns 'cheese.taxonomy)
 (def cheddars ["mild" "medium" "strong" "sharp" "extra sharp"])
 (in-ns 'cheese.analysis)
-cheddars
+
+
+;; cheddars
 cheese.taxonomy/cheddars
 clojure.string/join
 
@@ -27,10 +29,14 @@ clojure.string/join
 (def bries ["Wisconsin" "Somerset" "Brie de Meaux" "Brie de Melun"])
 (in-ns 'cheese.analysis)
 (clojure.core/refer 'cheese.taxonomy)
-bries
-cheddars
+
+
+;; bries
+;; cheddars
 (clojure.core/get (clojure.core/ns-map clojure.core/*ns*) 'bries)
 (clojure.core/get (clojure.core/ns-map clojure.core/*ns*) 'cheddars)
 (clojure.core/refer 'cheese.taxonomy :only ['bries])
-bries
-cheddars
+
+
+;; bries
+;; cheddars

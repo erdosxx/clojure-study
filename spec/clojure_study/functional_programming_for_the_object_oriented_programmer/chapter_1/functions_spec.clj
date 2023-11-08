@@ -1,8 +1,8 @@
-(ns clojure-study.core-spec
+(ns clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-1.functions-spec
   (:require
-    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-1.functions :refer :all]
+    [clojure-study.functional-programming-for-the-object-oriented-programmer.chapter-1.functions :refer [my-second tails puzzle prefix-of? factorial add-squares my-apply my-third my-third-2]]
     [clojure.pprint :as pp]
-    [speclj.core :refer :all]))
+    [speclj.core :refer [describe it should-be-nil should= should-throw run-specs]]))
 
 
 (describe "my-second"
